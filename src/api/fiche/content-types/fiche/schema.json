@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fiches",
+  "info": {
+    "displayName": "Fiche",
+    "singularName": "fiche",
+    "pluralName": "fiches",
+    "description": "Fiches d’information du classeur numérique (contenu en Markdown)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "summary": {
+      "type": "text"
+    },
+    "body_markdown": {
+      "type": "text",
+      "required": true
+    },
+    "reading_time": {
+      "type": "integer"
+    },
+    "highlight_on_home": {
+      "type": "boolean",
+      "default": false
+    },
+    "home_group": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "sos",
+        "conseil_quotidien",
+        "parcours_clef"
+      ],
+      "default": "none"
+    },
+    "audience": {
+      "type": "enumeration",
+      "enum": [
+        "patient",
+        "pro",
+        "patient_et_pro"
+      ],
+      "default": "patient"
+    },
+    "attachments": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::section.section",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag"
+    }
+  }
+}

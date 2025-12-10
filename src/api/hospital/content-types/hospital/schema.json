@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hospitals",
+  "info": {
+    "displayName": "Hospital",
+    "singularName": "hospital",
+    "pluralName": "hospitals",
+    "description": "Établissements couverts par le 3C des 3 Caps"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "centre_hospitalier",
+        "clinique",
+        "autre"
+      ],
+      "default": "centre_hospitalier"
+    },
+    "city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

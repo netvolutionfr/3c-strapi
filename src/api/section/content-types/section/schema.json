@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "displayName": "Section",
+    "singularName": "section",
+    "pluralName": "sections",
+    "description": "Grande rubrique du classeur (Parcours, Mieux-vivre, Informations, etc.)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

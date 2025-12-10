@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "external_links",
+  "info": {
+    "displayName": "External link",
+    "singularName": "external-link",
+    "pluralName": "external-links",
+    "description": "Liens externes : référentiels, INCa, OncoHDF, CH, associations, etc."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "referentiel",
+        "site_institutionnel",
+        "association",
+        "societe_savante",
+        "autre"
+      ],
+      "default": "autre"
+    },
+    "specialty": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
