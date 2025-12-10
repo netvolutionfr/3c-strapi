@@ -4,4 +4,8 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  i18n: {
+    locales: ['fr'],
+    defaultLocale: 'fr',
+  }
 });
